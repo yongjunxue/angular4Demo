@@ -1,0 +1,21 @@
+<div class="myQuery">
+	<div nz-row [nzGutter]="24" >
+	    <div nz-col [nzSpan]="6" class="myBlock" *ngFor="let field of config.queryModal.fields" >
+	    	<label>
+			    {{field.name}}:
+			</label>
+			<input nz-input type="text" [(ngModel)]="field.value" *ngIf="field.type=='text' || field.type==''" >
+
+			<nz-date-picker [nzFormat]="yyyy-MM-dd" [(ngModel)]="field.value" *ngIf="field.type=='date'">
+				</nz-date-picker>
+
+			<nz-select [(ngModel)]="field.value" class="mySelect" *ngIf="field.type=='select'">
+		      	<nz-option *ngFor="let x of field.selectList" [nzLabel]="x.name" [nzValue]="x.code"> 
+		      	</nz-option>
+		    </nz-select>
+	    </div>
+	    <div nz-col [nzSpan]="6" class="myBlock" *ngFor="let btn of config.queryModal.btns">
+	      <button nz-button [nzType]="'primary'"  (click)="clickButton(btn,$event)">{{btn.name}}</button>
+	    </div>
+	</div>
+</div>

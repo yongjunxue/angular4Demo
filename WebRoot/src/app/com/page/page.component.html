@@ -1,0 +1,20 @@
+<!--这个分页有问题-->
+<!-- <nz-pagination [nzPageIndex]="pageModal.page" [nzTotal]="pageModal.total" nzShowSizeChanger [nzPageSize]="pageModal.pageSize"></nz-pagination> -->
+
+
+<div class="myPage">
+	共{{paper.total}}条记录  {{pages}}页  当前第{{paper.page}}页
+	<span >
+		<button nz-button nzType="default" (click)="toFirstPage()"><<</button>
+		<button nz-button nzType="default" (click)="prePage()"><</button>
+		<button nz-button nzType="default" (click)="nextPage()">></button>
+		<button nz-button nzType="default" (click)="toLastPage()">>></button>
+
+		<nz-input-group nzSearch [nzSuffix]="suffixIconButton" class="myPageJump">
+	      <input type="text" nz-input [(ngModel)]="jumpNumber" (ngModelChange)="formatNum()">
+	    </nz-input-group>
+	    <ng-template #suffixIconButton>
+	      <button nz-button nzSearch (click)="toPage()">跳转</button>
+	    </ng-template>
+	</span>
+</div>

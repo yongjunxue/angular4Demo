@@ -1,0 +1,40 @@
+<nz-table #basicTable [nzData]="config.gridModal.heads" [nzShowPagination]="flase">
+  <thead>
+    <tr>
+      <th *ngFor="let head of basicTable.data">{{head.name}}</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of config.gridModal.datas">
+      <td *ngFor="let head of basicTable.data">
+      	<div *ngIf="head.type == '' || head.type == null || head.type == 'text'">
+      		{{data[head.code]}}
+      	</div>
+      	<div *ngIf="head.type == 'select'">
+      		<div *ngFor="let item of head.selectList">
+      			<div *ngIf="item.code == data[head.code]">
+      				{{item.name}}
+      			</div>
+      	</div>
+      		</div>
+      	<div *ngIf="head.type == 'link'">
+      		<!--这部分没有实现-->
+      		<a #a (click)="clickButton(data,a, $event)">{{data[head.code]}}</a>
+      	</div>
+      </td>
+      <td >
+      	<span *ngFor="let btn of config.gridModal.btns">
+      		<button *ngIf="checkConditon(data,btn)" (click)="clickButton(data,btn, $event)">
+      		{{btn.name}}
+    		</button>
+
+      	</span>
+
+      	<!-- <button *ngFor="let btn of gridModal.btns" (click)="clickButton(data,btn, $event)">
+      		{{btn.name}}
+    	</button> -->
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

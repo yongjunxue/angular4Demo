@@ -1,0 +1,18 @@
+.logo {
+  width: 200px;
+  height: 64px;
+  float: left;
+  font-size: 30px;
+}
+.myTopRight{
+	text-align: right;
+	margin-left: 200px;
+}
+.myTopBtn{
+	max-width: 150px;
+}
+.myTopRight div{
+	display: inline-block;
+	width: 100px;
+	text-align: center;;
+}

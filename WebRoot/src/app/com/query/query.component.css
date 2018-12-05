@@ -1,0 +1,15 @@
+.myQuery{
+  margin:10px;
+}
+.myBlock{
+  width: 300px;
+  margin:10px;
+}
+
+.myBlock input{
+  width: 180px;
+}
+
+.mySelect{
+  width: 180px;
+}

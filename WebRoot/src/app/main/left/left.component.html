@@ -1,0 +1,51 @@
+<ul nz-menu [nzMode]="'inline'" style="width: 200px;">
+      <li nz-submenu [(nzOpen)]="openMap.sub1" (nzOpenChange)="openHandler('sub1')">
+        <span title><i nz-icon type="mail"></i> 考试管理</span>
+        <ul>
+        	<li nz-menu-item routerLink="examList">考试列表</li>
+        	<li nz-menu-item routerLink="examVerify">试卷审核</li>
+          <!-- <li nz-menu-group>
+            <span title>Item 1</span>
+            <ul>
+              <li nz-menu-item>Option 1</li>
+              <li nz-menu-item>Option 2</li>
+            </ul>
+          </li>
+          <li nz-menu-group>
+            <span title>Item 2</span>
+            <ul>
+              <li nz-menu-item>Option 3</li>
+              <li nz-menu-item>Option 4</li>
+            </ul>
+          </li> -->
+        </ul>
+      </li>
+      <li nz-submenu [(nzOpen)]="openMap.sub2" (nzOpenChange)="openHandler('sub2')">
+        <span title><i nz-icon type="appstore"></i> 成绩管理</span>
+        <ul>
+          <li nz-menu-item>成绩列表</li>
+          <li nz-menu-item>考试分析</li>
+         <!--  <li nz-submenu>
+            <span title>Submenu</span>
+            <ul>
+              <li nz-menu-item>Option 7</li>
+              <li nz-menu-item>Option 8</li>
+            </ul>
+          </li> -->
+        </ul>
+      </li>
+      <li nz-submenu [(nzOpen)]="openMap.sub3" (nzOpenChange)="openHandler('sub3')">
+        <span title><i nz-icon type="setting"></i> 系统管理</span>
+        <ul>
+          <li nz-menu-item>组织管理</li>
+          <li nz-menu-item>科室管理</li>
+        </ul>
+      </li>
+      <li nz-submenu [(nzOpen)]="openMap.sub4" (nzOpenChange)="openHandler('sub4')">
+        <span title><i nz-icon type="setting"></i> 权限设置</span>
+        <ul>
+          <li nz-menu-item>菜单设置</li>
+          <li nz-menu-item>角色设置</li>
+        </ul>
+      </li>
+    </ul>
