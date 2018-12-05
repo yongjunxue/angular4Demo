@@ -26,7 +26,6 @@ export class ExamListComponent implements OnInit {
 				{code:"1",name:"已审核"},
 			]
 		},
-		{code:"search",name:"查询",type:"btn",url:""}
 	];
 
 	search():void{

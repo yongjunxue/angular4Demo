@@ -71,6 +71,14 @@ export class PageComponent implements OnInit {
 			for (var i = 0; i < this.config.queryModal.fields.length; i++) {
 				var field=this.config.queryModal.fields[i];
 				if(field && field.value){
+//					if(field.type=="select"){
+//						if(field.value != "-1"){
+//							filter[field.code]=field.value;
+//						}
+//					}else{
+//						filter[field.code]=field.value;
+//					}
+					
 					filter[field.code]=field.value;
 				}
 			}

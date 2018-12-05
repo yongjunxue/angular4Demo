@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Query2Component } from '../../com/query2/query2.component';
 import { PageComponent } from '../../com/page/page.component';
 @Component({
@@ -7,9 +7,6 @@ import { PageComponent } from '../../com/page/page.component';
   styleUrls: ['./exam-verify.component.css']
 })
 export class ExamVerifyComponent implements OnInit {
-	
-	@ViewChild('query2Component') query2Component: Query2Component;
-  	@ViewChild('pageComponent') pageComponent: PageComponent;
 
 	queryModal={
 		fields:[
@@ -17,7 +14,7 @@ export class ExamVerifyComponent implements OnInit {
 			{code:"creater",name:"创建人员",type:"text",value:""},
 			{code:"examCreateTime",name:"创建时间",type:"date",value:""},
 			{code:"examType",name:"试卷类型",type:"select",value:"1000",selectList:[
-				{code:"0000",name:"请选择"},
+				{code:"",name:"请选择"},
 				{code:"1000",name:"正式考试"},
 				{code:"2000",name:"同步测验"}
 			]},
@@ -32,13 +29,13 @@ export class ExamVerifyComponent implements OnInit {
 			{code:"examName",name:"试卷名称",type:"link",click:this.getDetail},
 			{code:"creater",name:"创建人员"},
 			{code:"examType",name:"试卷类型",type:"select",selectList:[
-				{code:"-1",name:"请选择"},
+				{code:"",name:"请选择"},
 				{code:"1000",name:"正式考试"},
 				{code:"2000",name:"同步测验"}
 			]},
 			{code:"score",name:"总分"},
 			{code:"verifyStatus",name:"审核状态",type:"select",selectList:[
-				{code:"-1",name:"请选择"},
+				{code:"",name:"请选择"},
 				{code:"1",name:"未审核"},
 				{code:"2",name:"通过"},
 				{code:"3",name:"不通过"},
